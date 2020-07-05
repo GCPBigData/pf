@@ -1,4 +1,4 @@
-package gov.anvisa.consulta
+package gov.pf.consulta;
 
 object ConsultaCNPJUDF {
 

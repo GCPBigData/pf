@@ -1,5 +1,5 @@
-name := "anvisa"
-organization := "anvisa"
+name := "pf"
+organization := "pf"
 version := "0.1"
 scalaVersion := "2.12.10"
 autoScalaLibrary := false

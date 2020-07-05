@@ -1,8 +1,4 @@
-package gov.anvisa.ler
-
-import gov.anvisa.ler.LerTA_ORCAMENTO.getClass
-import org.apache.log4j.Logger
-import org.apache.spark.sql.SparkSession
+package gov.pf.ler;
 
 object LerTA_PAF extends  Serializable {
 

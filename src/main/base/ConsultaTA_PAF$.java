@@ -1,7 +1,4 @@
-package gov.anvisa.consulta
-
-import org.apache.log4j.Logger
-import org.apache.spark.sql.SparkSession
+package gov.pf.consulta;
 
 /**
  *

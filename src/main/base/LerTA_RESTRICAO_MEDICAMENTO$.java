@@ -1,9 +1,7 @@
-package gov.anvisa.ler
+package gov.pf.ler;
 
-import org.apache.log4j.Logger
-import org.apache.spark.sql.SparkSession
+object LerTA_RESTRICAO_MEDICAMENTO extends Serializable {
 
-object LerTA_ORCAMENTO extends Serializable {
 
   @transient lazy val logger: Logger = Logger.getLogger(getClass.getName)
 
@@ -29,5 +27,5 @@ object LerTA_ORCAMENTO extends Serializable {
     logger.info("===========Finished=========")
     ss.stop()
 
-}
+  }
 }
