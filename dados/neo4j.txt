@@ -1,0 +1,29 @@
+C:\Users\usuario\.Neo4jDesktop\neo4jDatabases\database-1f8a92c5-ae94-4b54-ba82-7dc0fdc51f40\installation-4.1.0\import
+http://www.apcjones.com/arrows/#
+
+
+LOAD CSV WITH HEADERS FROM "file:///C:/Users/usuario/Documents/Dev/Spark/PF/dados/pf.csv" AS row
+CREATE(:pf{id:toInt(row.id), ano:row.ano, partido:row.partido, envolvidos:row.envolvidos, juiz:row.juiz, orgao:row.orgao});
+
+LOAD CSV FROM "file:///C:/Users/usuario/Documents/Dev/Spark/PF/dados/pf.csv"
+
+LOAD CSV WITH HEADERS FROM "file:///C:/Users/usuario/Documents/Dev/Spark/PF/dados/pf.csv" AS row
+CREATE(:pf{(id:row.id),(ano:row.ano),(partido:row.partido),(envolvidos:row.envolvidos),(juiz:row.juiz),(orgao:row.orgao)});
+
+load csv with headers from "file:///C:/Users/usuario/Documents/Dev/Spark/PF/dados/pf.csv" as
+pf create (pf1:pf {id: pf.id, ano: pf.ano, partido: pf.partido, envolvidos: pf.envolvidos, juiz: pf.juiz, orgao: pf.orgao})
+
+C:\Users\usuario\.Neo4jDesktop\neo4jDatabases\database-1f8a92c5-ae94-4b54-ba82-7dc0fdc51f40\installation-4.1.0\import
+http://www.apcjones.com/arrows/#
+
+LOAD CSV FROM 'file:///pf.csv' AS line CREATE (:pf{
+id:line[0],op:line[1],ano:line[2],partido:line[3],envolvidos:line[4],juiz:line[5],orgao:line[6]})
+
+
+LOAD CSV WITH HEADERS FROM 'file:///Users/usuario/Documents/Dev/Spark/PF/dados/pf.csv' AS line CREATE (:pf{
+id:line[0],ano:line[1],partido:line[2],envolvidos:line[3],juiz:line[	4],orgao:line[5]})
+
+
+MATCH (n) WHERE EXISTS(n.ano) RETURN DISTINCT "op" as entity, n.ano AS ano UNION ALL MATCH ()-[r]-() WHERE EXISTS(r.ano) RETURN DISTINCT "relationship" AS entity, r.ano AS ano 
+
+

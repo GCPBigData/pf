@@ -1,8 +1,4 @@
-package gov.anvisa.converte
-
-import org.apache.log4j.Logger
-import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
-import org.apache.spark.sql.{SaveMode, SparkSession}
+package gov.pf.ler.converte;
 
 /**
  *

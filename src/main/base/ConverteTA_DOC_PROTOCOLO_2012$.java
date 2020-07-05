@@ -1,7 +1,4 @@
-package gov.anvisa.converte
-
-import org.apache.log4j.Logger
-import org.apache.spark.sql.{SaveMode, SparkSession}
+package gov.pf.ler.converte;
 
 /**
  *
@@ -13,37 +10,36 @@ import org.apache.spark.sql.{SaveMode, SparkSession}
  *
  * https://github.com/GCPBigData/Anvisa-Medicamentos
  */
-object ConverteTA_PRODUTO_SAUDE_MODELO extends Serializable {
-
+object ConverteTA_DOC_PROTOCOLO_2012 extends Serializable {
 
   @transient lazy val logger: Logger = Logger.getLogger(getClass.getName)
 
   def main(args: Array[String]): Unit = {
 
     val ss = SparkSession.builder
-      .appName("CSV to TA_PRODUTO_SAUDE_MODELO")
+      .appName("CSV to TA_DOC_PROTOCOLO_2012")
       .master("local[*]")
       .getOrCreate
 
     //Abri o arquivo CSV
-    val TA_PRODUTO_SAUDE_MODELO = ss.read
+    val TA_DOC_PROTOCOLO_2012 = ss.read
       .format("csv")
       .option("header", "true")
       .option("sep", ";")
       .option("encoding", "windows-1252")
       .option("inferSchema","True")
-      .option("path","D:\\data\\TA_PRODUTO_SAUDE_MODELO.csv")
+      .option("path","D:\\data\\TA_DOC_PROTOCOLO_2012.csv")
       .load()
 
-    // Converte TA_PRODUTO_SAUDE_MODELO.csv para TA_PRODUTO_SAUDE_MODELO.parquet
-    TA_PRODUTO_SAUDE_MODELO.write
+    // Converte TA_DOC_PROTOCOLO_2012.csv para TA_DOC_PROTOCOLO_2012.parquet
+    TA_DOC_PROTOCOLO_2012.write
       .format("parquet")
       .mode(SaveMode.Overwrite)
       .option("encoding", "UTF-8")
       .option("path", "D:\\data\\TA_DOC_PROTOCOLO_2012\\")
       .save()
 
-    TA_PRODUTO_SAUDE_MODELO.show(1)
+    TA_DOC_PROTOCOLO_2012.show(1)
 
     logger.info("===========Finished=========")
     ss.stop()
